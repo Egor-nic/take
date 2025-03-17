@@ -1,0 +1,13 @@
+$smallMobile: 325px;
+$extraLargeMobile: 768px;
+$tablet: 1024px;
+$smallDesktop: 1224px;
+$largeDesktop: 1440px;
+$extraLargeDesktop: 1920px;
+
+
+@mixin mediaMinWidth($width) {
+  @media (min-width: width) {
+    @content;
+  }
+}
