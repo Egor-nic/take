@@ -7,7 +7,7 @@ $extraLargeDesktop: 1920px;
 
 
 @mixin mediaMinWidth($width) {
-  @media (min-width: width) {
+  @media (min-width: $width) {
     @content;
   }
 }

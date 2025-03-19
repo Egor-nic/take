@@ -9,7 +9,7 @@ import {
   ScrollRestoration,
 } from 'react-router';
 import { withProviders } from './providers';
-import '@/shared/assets/scss/global.scss';
+import '@/FSD/shared/assets/scss/global.scss';
 
 export const links: Route.LinksFunction = () => [
   { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
@@ -20,7 +20,7 @@ export const links: Route.LinksFunction = () => [
   },
   {
     rel: 'stylesheet',
-    href: 'https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap',
+    href: 'https://fonts.googleapis.com/css2?family==Inter:wght@400..900&display=swap',
   },
   {
     rel: 'stylesheet',

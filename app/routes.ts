@@ -6,10 +6,8 @@ import {
 } from '@react-router/dev/routes';
 
 export default [
-  layout('./shared/layouts/default.tsx', [
-    index('./pages/intro/intro.tsx'),
-    // route('/home', './pages/Home/Home.tsx'),
-    // route('home', './pages/home/home-page-anim.tsx'),
+  layout('./FSD/shared/layouts/default.tsx', [
+    index('./FSD/pages/Home/Home.tsx'),
   ]),
   // route("about", "./about.tsx"),
 

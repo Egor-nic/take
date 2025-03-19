@@ -1,0 +1,22 @@
+.start-section {
+  text-align: center;
+
+  .start-title {
+    margin-bottom: 40px;
+    font-weight: 900;
+    font-size: 35px;
+
+    @media (min-width: 1440px) {
+      font-size: 40px;
+    }
+  }
+
+  .start-items {
+    display: grid;
+    gap: 20px;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+}
