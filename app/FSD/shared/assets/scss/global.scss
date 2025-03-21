@@ -20,14 +20,35 @@ a {
   cursor: pointer;
   color: inherit;
   text-decoration: none;
+  font-size: 17px;
 }
 
 button {
   user-select: none;
   cursor: pointer;
 
+  &:hover {
+    background-color: #0e752c;
+  }
 }
 
+h1 {
+    margin-bottom: 20px;
+    color: #1e1e1e;
+    font-size: 45px;
+    line-height: 120%;
+    font-weight: 900;
+}
+
+h2 {
+  margin-bottom: 40px;
+  font-weight: 900;
+  font-size: 35px;
+
+  @media (min-width: 1440px) {
+    font-size: 40px;
+  }
+}
 
 h3 {
   font-size: 18px;

@@ -1,5 +1,3 @@
-
-
 .start-text {
   font-size: 15px;
   font-weight: 500;
@@ -11,9 +9,12 @@
   }
 }
 
-.start-icon {
+.start-icon_base {
+  margin-bottom: 20px;
+}
+
+.start-icon_xs {
   width: 60px;
   height: 60px;
-  margin-top: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
