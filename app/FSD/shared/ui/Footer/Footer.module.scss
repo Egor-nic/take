@@ -1,0 +1,39 @@
+@use '../../assets/scss/mixin.scss';
+@use '../../assets/scss/media.scss';
+@use "../../assets/scss/colors.scss";
+
+.footer {
+  padding: 30px 20px 20px 20px;
+  background-color: white;
+
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 10px;
+    column-gap: 20px;
+
+    .link {
+      transition: all 300ms ease;
+      font-weight: 500;
+
+      &:hover {
+        color: colors.$greenHovered;
+      }
+
+      @include mixin.mediaMinWidth(media.$tablet) {
+        padding: 20px;
+      }
+
+      @include mixin.mediaMinWidth(media.$largeDesktop) {
+        font-size: 17px;
+      }
+    }
+  }
+
+  @include mixin.mediaMinWidth(media.$largeDesktop) {
+    padding: 30px 40px;
+  }
+
+}

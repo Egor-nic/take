@@ -1,0 +1,186 @@
+@use "../../assets/scss/colors.scss";
+@use '../../assets/scss/mixin.scss';
+@use '../../assets/scss/media.scss';
+
+.header {
+  width: 100%;
+  background-color: #f8f8f8;
+  z-index: 10;
+
+
+  .headerWrapper {
+    position: relative;
+
+
+    .logoWrapper {
+      width: 100%;
+      padding: 0px 20px;
+      position: fixed;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 2000ms ease;
+
+      .logo {
+        width: 80px;
+        height: 24px;
+        background-image: url('@/FSD/shared/assets/images/logo.svg');
+        background-position: 0% 50%;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      @include mixin.mediaMinWidth(media.$tablet) {
+        display: none;
+      }
+    }
+
+
+    .headerBgWhite {
+      background-color: white;
+    }
+
+    .headerBgGray {
+      background-color: #f8f8f8;
+    }
+
+    .menuToggle {
+      display: none;
+    }
+
+    .menuIsOpen {
+      top: 0;
+    }
+
+    .menuIsClose {
+      top: -400px;
+
+      @include mixin.mediaMinWidth(media.$tablet) {
+        top: 0;
+      }
+    }
+
+    .menuIcon {
+      cursor: pointer;
+      padding: 10px 0px;
+
+      @include mixin.mediaMinWidth(media.$tablet) {
+        display: none;
+      }
+    }
+
+    .iconActive {
+      stroke: #228834;
+    }
+
+    .iconNotActive {
+      stroke: #1e1e1e;
+    }
+
+    .logoForTablet {
+      display: none;
+      width: 80px;
+      height: 30px;
+      background-image: url('@/FSD/shared/assets/images/logo.svg');
+      background-position: 0% 50%;
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      @include mixin.mediaMinWidth(media.$tablet) {
+        display: block;
+      }
+
+    }
+
+    .nav {
+      position: fixed;
+      min-width: 100%;
+      display: flex;
+      padding: 55px 20px;
+      flex-direction: column;
+      background-color: white;
+      z-index: 1;
+      transition: all 300ms ease;
+
+      .nasvList {
+        display: flex;
+        padding-top: 15px;
+        gap: 30px;
+        flex-direction: column;
+        list-style: none;
+
+        .navItem {
+          .navLink {
+            transition: all 300ms ease;
+            font-weight: 500;
+
+            &:hover {
+              color: colors.$greenHovered;
+            }
+
+            @include mixin.mediaMinWidth(media.$tablet) {
+              padding: 20px;
+            }
+
+            @include mixin.mediaMinWidth(media.$largeDesktop) {
+              font-size: 17px;
+            }
+          }
+        }
+
+        @include mixin.mediaMinWidth(media.$tablet) {
+          padding: 0;
+          flex-direction: row;
+          align-items: center;
+          gap: 10px;
+        }
+      }
+
+      .getRentLink {
+        max-width: 200px;
+        padding: 15px 8px;
+        margin-top: 40px;
+        transition: all 300ms ease;
+        font-weight: 700;
+        background-color: colors.$greenLink;
+        color: white;
+        border-radius: 10px;
+        border: none;
+        text-align: center;
+
+        &:hover {
+          background-color: colors.$greenHovered;
+        }
+
+        @include mixin.mediaMinWidth(media.$tablet) {
+          margin: 0 0 0 60px;
+          padding: 15px 35px;
+        }
+      }
+
+      @include mixin.mediaMinWidth(media.$tablet) {
+        position: relative;
+        min-width: auto;
+        flex-direction: row;
+        align-items: center;
+        padding: 0px 0px;
+        background-color: #f8f8f8;
+      }
+    }
+
+    @include mixin.mediaMinWidth(media.$tablet) {
+      max-width: 1280px;
+      display: flex;
+      margin: 0 auto;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 40px;
+    }
+  }
+
+  @include mixin.mediaMinWidth(media.$tablet) {
+    position: fixed;
+  }
+}

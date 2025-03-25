@@ -1,6 +1,7 @@
 import type { ContainerProps } from '../types';
-import './Container.scss';
+import styles from './Container.module.scss';
+
 
 export default function Container({ children }: ContainerProps) {
-  return <div className="container">{children}</div>;
+  return <div className={styles.container}>{children}</div>;
 }

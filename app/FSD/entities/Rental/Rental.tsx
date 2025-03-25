@@ -4,15 +4,16 @@ import rentalSecondCardImg from '@/FSD/shared/assets/images/rentalSecondCardImg.
 import rentalThirdCardImg from '@/FSD/shared/assets/images/rentalThirdCardImg.svg';
 import Card from '~/FSD/shared/ui/Card/Card';
 import CardWrapper from '~/FSD/shared/ui/wrappers/CardWrapper/CardWrapper';
-import './Rental.scss';
+import styles from './Rental.module.scss';
 
 export default function Rental() {
   return (
-    <section className="rental-section">
-      <div className="rental-wrapper">
+    <section className={styles.section} id="about">
+      <div className={styles.wrapper}>
 
-        <h2 className="rental-title">Прокат для жизни</h2>
-        <div className="rental-items">
+        <h2 className={styles.title}>Прокат для жизни</h2>
+        <p className={styles.text}>Вы даже не представляете, сколько проблем можно решить с помощью компаний-проката</p>
+        <div className={styles.items}>
           <CardWrapper>
             <Card
               img={rentalFirstCardImg}

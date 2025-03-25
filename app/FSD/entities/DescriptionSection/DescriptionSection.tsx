@@ -1,16 +1,19 @@
+import questionsGroupDecriptionSectionMobale from '@/FSD/shared/assets/images/questions-group--mobile.svg';
 import questionsGroupDecriptionSection from '@/FSD/shared/assets/images/questionsGroupDecriptionSection.svg';
-import './DescriptionSection.scss';
+import styles from './DescriptionSection.module.scss';
 
 export default function DescriptionSection() {
   return (
-    <section className="description-section">
-      <h2 className="description-title">
-        Теперь все
-        <span className="description-title-underLine">прозрачно</span>
-      </h2>
 
-      <img className="description-questions-group-img" src={questionsGroupDecriptionSection} alt="" />
-      <p className="description-text">
+    <section className={styles.section} id="how-it-works">
+      <h2 className={styles.title}>
+        Теперь все
+        <br className={styles.breackUnderLine}></br>
+        <span className={styles.underLine}>прозрачно</span>
+      </h2>
+      <img className={styles.questionsGroupImgMobale} src={questionsGroupDecriptionSectionMobale} alt="" />
+      <img className={styles.questionsGroupImg} src={questionsGroupDecriptionSection} alt="" />
+      <p className={styles.text}>
         Подтверждаете один раз свой профиль и пользуетесь всеми прокатами. Ехать и подписывать документы, отдавать огромный залог больше не нужно. На TAKE можно и забронировать и оплатить аренду.
       </p>
     </section>

@@ -3,13 +3,13 @@ import img2 from '@/FSD/shared/assets/images/startimg2.png';
 import img3 from '@/FSD/shared/assets/images/startimg3.png';
 import CardWrapper from '~/FSD/shared/ui/wrappers/CardWrapper/CardWrapper';
 import Card from '../../shared/ui/Card/Card';
-import './HowToStartSection.scss';
+import styles from './HowToStartSection.module.scss';
 
 export default function HowToStartSection() {
   return (
-    <section className="start-section">
-      <h2 className="start-title">Как начать пользоваться?</h2>
-      <div className="start-items">
+    <section className={styles.section}>
+      <h2 className={styles.title}>Как начать пользоваться?</h2>
+      <div className={styles.items}>
         <CardWrapper>
           <Card
             img={img}

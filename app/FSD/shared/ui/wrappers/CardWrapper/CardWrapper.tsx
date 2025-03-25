@@ -1,6 +1,6 @@
 import type { ContainerProps } from '../types';
-import './CardWrapper.scss';
+import styles from './CardWrapper.module.scss';
 
 export default function CardWrapper({ children }: ContainerProps) {
-  return <div className="card-wrapper">{children}</div>;
+  return <div className={styles.cardWrapper}>{children}</div>;
 }

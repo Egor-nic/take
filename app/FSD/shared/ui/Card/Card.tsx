@@ -1,4 +1,5 @@
-import './Card.scss';
+import classNames from 'classnames';
+import styles from './Card.module.scss';
 
 interface CardProps {
   img: string;
@@ -6,12 +7,23 @@ interface CardProps {
   text: string;
   imgSize?: string;
 }
+
+const iconSize: { [key: string]: string } = {
+  xs: 'icon_xs',
+  base: 'icon_base',
+};
 export default function Card({ img, title, text, imgSize = 'base' }: CardProps) {
   return (
     <>
-      <img className={`start-icon start-icon_${imgSize}`} src={img} alt="img" />
+      <img
+        src={img}
+        className={classNames(styles.icon, {
+          [styles[iconSize[imgSize]]]: true,
+
+        })}
+      />
       <h3>{title}</h3>
-      <p className="start-text">{text}</p>
+      <p className={styles.text}>{text}</p>
     </>
   );
 }

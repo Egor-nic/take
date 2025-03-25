@@ -1,15 +1,14 @@
+import { Link } from 'react-router';
 import Container from '../wrappers/Container/Container';
-import './Footer.scss';
+import styles from './Footer.module.scss';
 
 export default function Footer() {
   return (
-    <footer className="footer">
+    <footer className={styles.footer}>
       <Container>
-        <div className="footer-wrapper">
-          <div className="footer-copyright">
-            <span>take-sharing ©. 2021</span>
-          </div>
-          <a className="nav-link--footer" href="#" target="black">Пользовательское соглашение</a>
+        <div className={styles.wrapper}>
+          <span>take-sharing ©. 2021</span>
+          <Link className={styles.link} to="#" target="black">Пользовательское соглашение</Link>
         </div>
       </Container>
     </footer>
