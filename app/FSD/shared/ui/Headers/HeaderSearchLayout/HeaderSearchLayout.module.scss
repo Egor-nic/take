@@ -1,0 +1,12 @@
+.header {
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .link {
+    padding: 10px 14px;
+    border-radius: 8px;
+    box-shadow: 0px 1px 5px 0px #00144324;
+  }
+}

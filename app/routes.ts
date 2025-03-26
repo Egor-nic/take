@@ -11,10 +11,9 @@ export default [
   ]),
   // route("about", "./about.tsx"),
 
-  // layout("./auth/layout.tsx", [
-  //   route("login", "./auth/login.tsx"),
-  //   route("register", "./auth/register.tsx"),
-  // ]),
+  layout('./FSD/shared/layouts/search.tsx', [
+    route('search', './FSD/pages/Search/Search.tsx'),
+  ]),
 
   // ...prefix("concerts", [
   //   index("./concerts/home.tsx"),

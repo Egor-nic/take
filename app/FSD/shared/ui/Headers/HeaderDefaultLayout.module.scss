@@ -23,14 +23,14 @@
       justify-content: space-between;
       transition: all 2000ms ease;
 
-      .logo {
-        width: 80px;
-        height: 24px;
-        background-image: url('@/FSD/shared/assets/images/logo.svg');
-        background-position: 0% 50%;
-        background-size: contain;
-        background-repeat: no-repeat;
-      }
+      // .logo {
+      //   width: 80px;
+      //   height: 24px;
+      //   background-image: url('@/FSD/shared/assets/images/logo.svg');
+      //   background-position: 0% 50%;
+      //   background-size: contain;
+      //   background-repeat: no-repeat;
+      // }
 
       @include mixin.mediaMinWidth(media.$tablet) {
         display: none;

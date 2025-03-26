@@ -2,13 +2,16 @@ import rentalFirstCardImg from '@/FSD/shared/assets/images/rentalFirstCardImg.sv
 import rentalFourthCardImg from '@/FSD/shared/assets/images/rentalFourthCardImg.svg';
 import rentalSecondCardImg from '@/FSD/shared/assets/images/rentalSecondCardImg.svg';
 import rentalThirdCardImg from '@/FSD/shared/assets/images/rentalThirdCardImg.svg';
+import { useOutletContext } from 'react-router';
 import Card from '~/FSD/shared/ui/Card/Card';
 import CardWrapper from '~/FSD/shared/ui/wrappers/CardWrapper/CardWrapper';
 import styles from './Rental.module.scss';
 
 export default function Rental() {
+  const { refAboutSection } = useOutletContext();
+
   return (
-    <section className={styles.section} id="about">
+    <section className={styles.section} id="about" ref={refAboutSection}>
       <div className={styles.wrapper}>
 
         <h2 className={styles.title}>Прокат для жизни</h2>

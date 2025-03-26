@@ -7,7 +7,7 @@ import ReservationSection from '~/FSD/entities/ReservationSection/ReservationSec
 
 export function meta() {
   return [
-    { title: 'Тема / цвета' },
+    { title: 'TAKE' },
   ];
 }
 

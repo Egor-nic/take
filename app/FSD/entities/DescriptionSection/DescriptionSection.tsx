@@ -1,11 +1,14 @@
 import questionsGroupDecriptionSectionMobale from '@/FSD/shared/assets/images/questions-group--mobile.svg';
 import questionsGroupDecriptionSection from '@/FSD/shared/assets/images/questionsGroupDecriptionSection.svg';
+import { useOutletContext } from 'react-router';
 import styles from './DescriptionSection.module.scss';
 
 export default function DescriptionSection() {
+  const { refHowItWorksSection } = useOutletContext();
+
   return (
 
-    <section className={styles.section} id="how-it-works">
+    <section className={styles.section} id="how-it-works" ref={refHowItWorksSection}>
       <h2 className={styles.title}>
         Теперь все
         <br className={styles.breackUnderLine}></br>

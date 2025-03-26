@@ -13,7 +13,7 @@ export default function MainContetnt() {
           <span className={styles.underLine}>быстро</span>
         </h1>
         <p className={styles.text}>Найти и забронировать нужную вещь в Тольятти можно в одном месте, без огромных залогов и бумажной волокиты</p>
-        <Link to="/#" className={styles.findLink}>Найти</Link>
+        <Link to="/search" className={styles.findLink}>Найти</Link>
       </div>
     </section>
   );
