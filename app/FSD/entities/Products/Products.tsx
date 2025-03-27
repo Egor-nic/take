@@ -1,51 +1,31 @@
 import styles from './Products.module.scss';
 import ProductCard from './ui/ProductCard';
-import productCard1 from '@/FSD/shared/assets/images/productCard1.jpg';
 
-export default function Products() {
+interface ProductsList {
+  id: number;
+  price: number;
+  companyName: string;
+  productName: string;
+  img: string;
+}
+
+interface ProductsProps {
+  products: ProductsList[];
+}
+
+export default function Products({ products }: ProductsProps) {
   return (
     <div className={styles.wrapper}>
-      <ProductCard
-        price={200}
-        companyName='Sharing Company'
-        productName='ВЕЛОСИПЕД SCOTT METRIX 30 EQ'
-        img={productCard1}
-      />
-
-      <ProductCard
-        price={200}
-        companyName='Sharing Company'
-        productName='ВЕЛОСИПЕД SCOTT METRIX 30 EQ'
-        img={productCard1}
-      />
-
-      <ProductCard
-        price={200}
-        companyName='Sharing Company'
-        productName='ВЕЛОСИПЕД SCOTT METRIX 30 EQ'
-        img={productCard1}
-      />
-
-      <ProductCard
-        price={200}
-        companyName='Sharing Company'
-        productName='ВЕЛОСИПЕД SCOTT METRIX 30 EQ'
-        img={productCard1}
-      />
-
-      <ProductCard
-        price={200}
-        companyName='Sharing Company'
-        productName='ВЕЛОСИПЕД SCOTT METRIX 30 EQ'
-        img={productCard1}
-      />
-
-      <ProductCard
-        price={200}
-        companyName='Sharing Company'
-        productName='ВЕЛОСИПЕД SCOTT METRIX 30 EQ'
-        img={productCard1}
-      />
+      {products.map(product => (
+        <ProductCard
+          key={product.id}
+          price={product.price}
+          companyName={product.companyName}
+          productName={product.productName}
+          img={product.img}
+          id={product.id}
+        />
+      ))}
     </div>
-  )
+  );
 }
