@@ -1,5 +1,6 @@
-@use "../../shared//assets//scss/colors.scss";
-
+@use "../../shared/assets//scss/colors.scss";
+@use '../../shared/assets/scss/mixin.scss';
+@use '../../shared/assets/scss/media.scss';
 .wrapper {
   // max-width: 1200px;
   margin-top: 10px;
@@ -13,3 +14,67 @@
     gap: 12px;
   }
 }
+
+
+.citiesWrapper {
+  position: relative;
+
+
+  .container {
+    padding: 32px 40px 0px 40px;
+
+    .cities {
+      position: relative;
+      margin-top: 24px;
+      min-width: 288px;
+      display: grid;
+      grid-template-columns: 1fr;
+      list-style: none;
+
+      .item {
+        padding: 10px 20px;
+        border-radius: 16px;
+
+        &:hover {
+          background-color: colors.$gray-40;
+        }
+      }
+
+      @include mixin.mediaMinWidth(media.$extraLargeMobile) {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      @include mixin.mediaMinWidth(media.$tablet) {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+  }
+
+  .btnFindWrapper {
+    border-top: 2px solid #ECECED;
+    padding: 24px 32px;
+
+    .btnFind {
+      padding: 14px;
+      min-width: 157px;
+      text-align: center;
+      color: #fff;
+      background-color: colors.$green;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 500;
+      border: none;
+    }
+  }
+
+}
+
+
+
+// .underLine {
+//   position: absolute;
+//   padding-bottom: 20px;
+//   bottom: 5%;
+//   left: 0;
+//   width: 100%;
+// }

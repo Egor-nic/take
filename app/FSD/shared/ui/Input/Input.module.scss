@@ -4,14 +4,16 @@
 
 .form {
   position: relative;
-  width: 50%;
+  max-width: 572px;
+  width: 100%;
+  padding-right: 60px;
   border-radius: 8px;
   box-shadow: 0px 1px 5px 0px #00144324;
 
 
   .input {
-    padding: 18px 23px;
-    width: 90%;
+    padding: 18px 24px;
+    width: 100%;
     border: none;
     background-color: inherit;
 

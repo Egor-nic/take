@@ -6,7 +6,9 @@ import styles from './HeaderSearchLayout.module.scss';
 export default function HeaderSearchLayout() {
   return (
     <header className={styles.header}>
-      <Logo calssName="logo" />
+      <div className={styles.logo}>
+        <Logo calssName="logo" />
+      </div>
       <Input />
 
       <Link to="/#" className={styles.link}>
