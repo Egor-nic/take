@@ -2,7 +2,7 @@ import styles from './Products.module.scss';
 import ProductCard from './ui/ProductCard';
 
 interface ProductsList {
-  id: number;
+  uuid: string;
   price: number;
   companyName: string;
   productName: string;
@@ -11,19 +11,22 @@ interface ProductsList {
 
 interface ProductsProps {
   products: ProductsList[];
+  cardSize?: string;
+
 }
 
-export default function Products({ products }: ProductsProps) {
+export default function Products({ products, cardSize }: ProductsProps) {
   return (
     <div className={styles.wrapper}>
       {products.map(product => (
         <ProductCard
-          key={product.id}
+          cardSize={cardSize}
+          key={product.uuid}
           price={product.price}
           companyName={product.companyName}
           productName={product.productName}
           img={product.img}
-          id={product.id}
+          uuid={product.uuid}
         />
       ))}
     </div>

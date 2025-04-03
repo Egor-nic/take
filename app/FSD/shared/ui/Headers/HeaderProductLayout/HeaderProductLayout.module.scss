@@ -1,0 +1,25 @@
+@use "../../../assets/scss/colors.scss";
+@use '../../../assets/scss/mixin.scss';
+@use '../../../assets/scss/media.scss';
+
+.header {
+  // visibility: hidden;
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .link {
+    padding: 10px 14px;
+    border-radius: 8px;
+    box-shadow: 0px 1px 5px 0px #00144324;
+  }
+
+.logo {
+  display: none;
+
+  @include mixin.mediaMinWidth(media.$extraLargeMobile) {
+    display: block;
+  }
+}
+}

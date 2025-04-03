@@ -1,0 +1,52 @@
+@use "../../../../shared/assets/scss/colors.scss";
+@use '../../../../shared/assets/scss/mixin.scss';
+@use '../../../../shared/assets/scss/media.scss';
+
+.card {
+  padding: 20px 20px 10px;
+  height: 100%;
+  border-radius: 10px;
+  background-color: white;
+  height: 250px;
+  overflow: auto;
+
+  .user {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: start;
+
+
+    .avatar {
+      width: 80px;
+      height: 80px;
+      flex: none;
+      overflow: hidden;
+      border-radius: 100%;
+      object-fit: fill;
+
+    }
+
+    .comment {
+      text-align: start;
+
+      .userName {
+        margin-bottom: 14px;
+      }
+
+      .comentText {
+        font-size: 15px;
+      }
+
+      @include mixin.mediaMinWidth(media.$extraLargeMobile) {
+      padding-top: 20px;
+        
+      }
+    }
+
+    @include mixin.mediaMinWidth(media.$extraLargeMobile) {
+      flex-direction: row;
+    }
+  }
+
+}

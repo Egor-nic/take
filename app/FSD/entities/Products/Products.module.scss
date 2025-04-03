@@ -1,8 +1,11 @@
+@use '../../shared/assets/scss/mixin.scss';
+@use '../../shared/assets/scss/media.scss';
+
 .wrapper {
   user-select: none;
   padding: 24px 0px;
   display: flex;
-  justify-content: start;
   flex-wrap: wrap;
+  justify-content: start;
   gap: 24px;
 }

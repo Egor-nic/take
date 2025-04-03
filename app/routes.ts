@@ -11,8 +11,11 @@ export default [
   ]),
   // route("about", "./about.tsx"),
 
-  layout('./FSD/shared/layouts/search.tsx', [
-    route('search', './FSD/pages/Search/Search.tsx'),
+  layout('./FSD/shared/layouts/product.tsx', [
+    route('product', './FSD/pages/Search/Search.tsx'),
+    route('product/:uuid', './FSD/pages/Product/Product.tsx'),
+    route('pay/:uuid', './FSD/pages/Pay/Pay.tsx'),
+
   ]),
 
   // ...prefix("concerts", [

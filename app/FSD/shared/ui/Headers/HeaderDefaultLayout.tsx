@@ -121,7 +121,7 @@ export default function HeaderDefaultLayout({ htmlRefs }: HeaderDefaultLayoutPro
             </li>
           </ul>
 
-          <Link to="/search" className={styles.getRentLink}>Взять в аренду</Link>
+          <Link to="/product" className={styles.getRentLink}>Взять в аренду</Link>
         </nav>
       </div>
     </header>

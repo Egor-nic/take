@@ -1,4 +1,5 @@
 import ActiveRecreation from '~/FSD/entities/ActiveRecreation/ActiveRecreation';
+import Comment from '~/FSD/entities/Comment/Comment';
 import DescriptionSection from '~/FSD/entities/DescriptionSection/DescriptionSection';
 import HowToStartSection from '~/FSD/entities/HowToStartSection/HowToStartSection';
 import MainContetnt from '~/FSD/entities/MainContetnt/MainContetnt';
@@ -18,6 +19,7 @@ export default function Home() {
       <Rental />
       <DescriptionSection />
       <HowToStartSection />
+      <Comment />
       <ActiveRecreation />
       <ReservationSection />
     </>

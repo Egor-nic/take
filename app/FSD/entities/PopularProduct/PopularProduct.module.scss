@@ -1,0 +1,28 @@
+@use "../../shared/assets/scss/colors.scss";
+@use '../../shared/assets/scss/mixin.scss';
+@use '../../shared/assets/scss/media.scss';
+
+.popularBlock {
+  width: auto;
+  margin-bottom: 32px;
+  .popular {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+
+    @include mixin.mediaMinWidth(media.$extraLargeMobile) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  @include mixin.mediaMinWidth(media.$extraLargeMobile) {
+    padding: 0px 24px;
+    border-right: 1px solid #DFE1E6;
+    border-left: 1px solid #DFE1E6;
+
+    width: 70%;
+  }
+
+  // @include mixin.mediaMinWidth(media.$extraLargeMobile) {
+  // }
+}
