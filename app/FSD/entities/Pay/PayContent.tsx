@@ -1,6 +1,5 @@
 import productImg3 from '@/FSD/shared/assets/images/productImg3.jpg';
 import styles from './PayContent.module.scss';
-import PayHeader from './ui/Header/PayHeader';
 
 export default function PayContent() {
   return (
@@ -11,15 +10,14 @@ export default function PayContent() {
       </div>
       <div className={styles.content}>
 
-
         <div className={styles.wrapper}>
           <div className={styles.reservationInfo}>
             <h3>Ваша бронь</h3>
 
             <div className={styles.date}>
-              <div>
-                <div>Даты</div>
-                <span>1 янв 2020г. - 8 янв 2022 г.</span>
+              <div className={styles.dateInfo}>
+                <div className={styles.dateTitle}>Даты</div>
+                <span className={styles.dateChoose}>1 янв 2020г. - 8 янв 2022 г.</span>
               </div>
 
               <button type="button">Изменить даты</button>
@@ -27,7 +25,7 @@ export default function PayContent() {
 
             <div>
               <h3>Количество товара</h3>
-              <span>1 шт</span>
+              <span className={styles.productNimber}>1 шт</span>
             </div>
           </div>
 
@@ -36,7 +34,6 @@ export default function PayContent() {
               <img src={productImg3} alt="img" />
               <span>Велосипед походный: Stark</span>
             </div>
-
 
             <div className={styles.taxi}>
               <div className={styles.pledge}>
@@ -57,8 +54,7 @@ export default function PayContent() {
             </div>
           </div>
         </div>
-
-      </div >
+      </div>
     </>
 
   );

@@ -1,8 +1,8 @@
 import classNames from 'classnames';
 import { useState } from 'react';
+import { Link } from 'react-router';
 import Carousel from '~/FSD/shared/ui/Carusel/Carusel';
 import styles from './ProductInfo.module.scss';
-import { Link } from 'react-router';
 
 interface ProductInfoProps {
   product: {
@@ -14,6 +14,7 @@ interface ProductInfoProps {
     characteristics: string;
   };
 }
+
 export default function ProductInfo({ product }: ProductInfoProps) {
   const [activeTab, setActiveTab] = useState({ description: true, characteristics: false });
 
