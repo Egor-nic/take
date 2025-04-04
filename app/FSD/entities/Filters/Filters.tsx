@@ -6,7 +6,6 @@ import Container from '~/FSD/shared/ui/wrappers/Container/Container';
 import styles from './Filters.module.scss';
 import Tabs from './ui/Tabs/Tabs';
 
-
 type ValuePiece = Date | null;
 
 type Value = ValuePiece | [ValuePiece, ValuePiece];
@@ -65,18 +64,21 @@ function ModalContent() {
 }
 
 interface ModalCalendarProps {
-  setDate: React.Dispatch<React.SetStateAction<Value>>,
-  date: Value,
+  setDate: React.Dispatch<React.SetStateAction<Value>>;
+  date: Value;
 }
-function ModalCalendar({setDate, date}: ModalCalendarProps) {
+function ModalCalendar({ setDate, date }: ModalCalendarProps) {
   return (
-    <div className={styles.calendar}>
-      <h2>Выберите даты аренды</h2>
-      <Calendar onChange={setDate} value={date} />
-
-      <button>Применить даты</button>
+    <div className={styles.calendarWrapper}>
+      <div className={styles.calendar}>
+        <h2>Выберите даты аренды</h2>
+        <Calendar onChange={setDate} value={date} />
+      </div>
+      <div className={styles.btnWrapper}>
+        <button type="button" className={styles.btnClaendar}>Применить даты</button>
+      </div>
     </div>
-  )
+  );
 }
 
 //
@@ -87,25 +89,71 @@ export default function Filters() {
   const [date, setDate] = useState<Value>(new Date());
   // const [selectRange, setSelectRange] = useState<boolean>(false);
 
+  const [tabContent, setTabContent] = useState({ date: false, search: false, categories: false });
   return (
     <div className={styles.wrapper}>
       <Container>
         <div className={styles.items}>
-          <Tabs text="Место нахождения" onClick={() => dialogRef.current?.showModal()} />
-          <Tabs text="Даты" />
-          <Tabs text="Категория" />
+          <Tabs
+            text="Место нахождения"
+            onClick={() => {
+              setTabContent(prev => ({ ...prev, search: true }));
+              dialogRef.current?.showModal();
+            }}
+          />
+          <Tabs
+            text="Даты"
+            onClick={() => {
+              setTabContent(prev => ({ ...prev, date: true }));
+              dialogRef.current?.showModal();
+            }}
+          />
+          <Tabs
+            text="Категория"
+            onClick={() => {
+              setTabContent(prev => ({ ...prev, categories: true }));
+              dialogRef.current?.showModal();
+            }}
+          />
         </div>
       </Container>
 
-      {/* <Modal
-        modalContent={<ModalContent />}
-        ref={{ dialogRef }}
-      /> */}
+      {tabContent.categories
+        && (
+          <Modal
+            closeModal={() => {
+              setTabContent(prev => ({ ...prev, categories: false }));
+              dialogRef.current?.close();
+            }}
+            modalContent={<p>Будут Категории</p>}
+            ref={{ dialogRef }}
+          />
+        )}
 
-      <Modal
-        modalContent={<ModalCalendar setDate={setDate} date={date} />}
-        ref={{ dialogRef }}
-      />
+      {tabContent.search
+        && (
+          <Modal
+            closeModal={() => {
+              setTabContent(prev => ({ ...prev, search: false }));
+              dialogRef.current?.close();
+            }}
+            modalContent={<ModalContent />}
+            ref={{ dialogRef }}
+          />
+        )}
+
+      {tabContent.date
+        && (
+          <Modal
+            closeModal={() => {
+              setTabContent(prev => ({ ...prev, date: false }));
+              dialogRef.current?.close();
+            }}
+            modalContent={<ModalCalendar setDate={setDate} date={date} />}
+            ref={{ dialogRef }}
+          />
+        )}
+
     </div>
   );
 }

@@ -8,18 +8,17 @@ interface ModalProps {
   modalTitle?: string;
   modalContent: JSX.Element;
   ref: refModal;
+  closeModal: () => void;
 }
 
-export default function Modal({ modalTitle, modalContent, ref }: ModalProps) {
+export default function Modal({ modalTitle, modalContent, ref, closeModal }: ModalProps) {
   return (
     <div>
       <dialog role="alertdialog" ref={ref.dialogRef} className={styles.modal}>
         <button
           className={styles.close}
           type="button"
-          onClick={() => {
-            ref.dialogRef.current?.close();
-          }}
+          onClick={closeModal}
         >
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path

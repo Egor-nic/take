@@ -70,9 +70,44 @@
 }
 
 
-.calendar {
-  justify-items: center;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+.calendarWrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 95%;
+  .calendar {
+    justify-items: center;
+  
+  
+    
+    // box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  }
+  .btnWrapper {
+    width: 100%;
+    margin-top: 24px;
+    text-align: end;
+    .btnClaendar {
+      max-width: 200px;
+      padding: 15px 8px;
+      margin-top: 40px;
+      transition: all 300ms ease;
+      font-weight: 700;
+      background-color: colors.$greenLink;
+      color: white;
+      border-radius: 10px;
+      border: none;
+      text-align: center;
+  
+      &:hover {
+        background-color: colors.$greenHovered;
+      }
+  
+      @include mixin.mediaMinWidth(media.$tablet) {
+        margin: 0 0 0 60px;
+        padding: 15px 35px;
+      }
+    }
+  }
 }
 
 
