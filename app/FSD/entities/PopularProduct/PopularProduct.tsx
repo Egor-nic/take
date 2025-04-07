@@ -18,7 +18,7 @@ export default function PopularProduct({ products }: SimilarProductProps) {
         {products.map(product => (
           <ProductCard
             key={product.uuid}
-            uuid={product.uuid}
+            redirectUrl={`/product/${product.uuid}`}
             img={product.img}
             price={product.price}
             productName={product.productName}

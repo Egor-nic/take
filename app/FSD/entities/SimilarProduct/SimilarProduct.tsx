@@ -18,8 +18,8 @@ export function SimilarProduct({ products }: SimilarProductProps) {
       <div className={styles.similar}>
         {products.map(product => (
           <ProductCard
+            redirectUrl={`/product/${product.uuid}`}
             key={product.uuid}
-            uuid={product.uuid}
             img={product.img}
             price={product.price}
             productName={product.productName}

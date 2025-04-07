@@ -309,6 +309,29 @@ export const products = [
     productName: 'ВЕЛОСИПЕД SCOTT METRIX 30 EQ',
     img: productCard1,
   },
+
+  {
+    uuid: '123e4567-e89b-12d3-a456-426655440041',
+    price: 10000,
+    companyName: 'Sharing Company',
+    productName: 'ВЕЛОСИПЕД SCOTT METRIX 30 EQ',
+    img: productCard1,
+  },
+
+  {
+    uuid: '123e4567-e89b-12d3-a456-426655440042',
+    price: 300,
+    companyName: 'Sharing Company',
+    productName: 'ВЕЛОСИПЕД SCOTT METRIX 30 EQ',
+    img: productImg1,
+  },
+  {
+    uuid: '123e4567-e89b-12d3-a456-426655440043',
+    price: 2000,
+    companyName: 'Sharing Company',
+    productName: 'ВЕЛОСИПЕД SCOTT METRIX 30 EQ',
+    img: productImg3,
+  },
 ];
 
 export const similarProduct = [

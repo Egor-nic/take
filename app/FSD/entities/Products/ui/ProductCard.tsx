@@ -7,18 +7,17 @@ interface ProductsCardProps {
   companyName: string;
   productName: string;
   price: number;
-  uuid: string;
   cardSize?: string;
-
+  redirectUrl: string;
 }
 
 const size: { [key: string]: string } = {
   xs: 'card_xs',
   base: 'card_base',
 };
-export default function ProductCard({ img, companyName, productName, price, uuid, cardSize = 'base' }: ProductsCardProps) {
+export default function ProductCard({ img, companyName, productName, price, cardSize = 'base', redirectUrl }: ProductsCardProps) {
   return (
-    <Link className={styles.link} to={`${uuid}`}>
+    <Link className={styles.link} to={redirectUrl}>
       <div className={styles.cardWrapper}>
 
         <img className={styles.img} src={img} alt="" />

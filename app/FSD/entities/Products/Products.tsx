@@ -26,7 +26,7 @@ export default function Products({ products, cardSize }: ProductsProps) {
           companyName={product.companyName}
           productName={product.productName}
           img={product.img}
-          uuid={product.uuid}
+          redirectUrl={product.uuid}
         />
       ))}
     </div>

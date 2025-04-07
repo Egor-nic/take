@@ -1,6 +1,7 @@
 import productImg2 from '@/FSD/shared/assets/images/productCard1.jpg';
 import productImg1 from '@/FSD/shared/assets/images/productImg1.png';
 import productImg3 from '@/FSD/shared/assets/images/productImg3.jpg';
+import { useEffect, useState } from 'react';
 
 import { useParams } from 'react-router';
 import PopularProduct from '~/FSD/entities/PopularProduct/PopularProduct';
@@ -15,25 +16,38 @@ const characteristics = `Две скорости и еще характирис�
 export default function Product() {
   const { uuid } = useParams();
 
-  const product = products.find(el => el.uuid === uuid);
+  interface DataState {
+    uuid: string;
+    title: string;
+    images: string[];
+    price: number;
+    description: string;
+    characteristics: string;
+  }
+  const [data, setData] = useState<DataState | undefined>(undefined);
 
-  const productItem = product
-    ? {
+  useEffect(() => {
+    const product = products.find(el => el.uuid === uuid);
+
+    if (product) {
+      setData({
         uuid: product.uuid,
         title: product.productName,
         images: [productImg1, productImg2, productImg3],
         price: product.price,
         description,
         characteristics,
-      }
-    : undefined;
+      })
+    };
+  }, [uuid])
+
 
   return (
 
     <>
       <Line />
       <Container>
-        {productItem && <ProductInfo product={productItem} />}
+        <ProductInfo product={data} />
         <SimilarProduct products={similarProduct} />
         <PopularProduct products={similarProduct} />
       </Container>
