@@ -1,14 +1,38 @@
 import ProductCard from '../Products/ui/ProductCard';
 import styles from './SimilarProduct.module.scss';
 
+interface Images {
+  avatar: string;
+  other: string[];
+}
+
+// Интерфейс для объекта location
+interface Location {
+  uuid: string;
+  title: string;
+  name: string;
+}
+
+// Интерфейс для объекта dates
+interface Dates {
+  BookedDates: Date[];
+}
+
+// Интерфейс для элемента массива
+interface ProductsList {
+  uuid: string;
+  price: number;
+  companyName: string;
+  productName: string;
+  immages: Images;
+  location: Location;
+  dates: Dates;
+  description: string;
+  characteristics: string;
+}
+
 interface SimilarProductProps {
-  products: {
-    img: string;
-    companyName: string;
-    productName: string;
-    price: number;
-    uuid: string;
-  }[];
+  products: ProductsList[];
 }
 
 export function SimilarProduct({ products }: SimilarProductProps) {
@@ -20,7 +44,7 @@ export function SimilarProduct({ products }: SimilarProductProps) {
           <ProductCard
             redirectUrl={`/product/${product.uuid}`}
             key={product.uuid}
-            img={product.img}
+            img={product.immages.avatar}
             price={product.price}
             productName={product.productName}
             companyName={product.companyName}

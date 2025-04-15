@@ -72,10 +72,16 @@
       .start,
       .end {
         padding: 8px 0px 8px 12px;
+        width: 100%;
+        transition: border 300ms;
+        cursor: pointer;
         border-radius: 8px;
         border: 1px solid #EAEAEA;
-        width: 100%;
 
+
+        &:hover {
+          border: 1px solid colors.$green;
+        }
 
         .dateTitle {
           font-size: 13px;

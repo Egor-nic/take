@@ -8,7 +8,7 @@
   top: 0;
   width: 100%;
   z-index: 1000000000;
-  background: #13121229;
+  background: #0E0E0F99;
 
   &[data-open="true"] {
     display: block;
@@ -19,22 +19,25 @@
   }
 
   .modal {
-    padding: 40px 8px 0px;
- 
+    padding: 20px 16px 16px;
+    position: relative;
+    width: 100%;
+    max-height: 95vh;
     overflow: auto;
     border: none;
-    border-radius: 15px;
-    width: 350px;
-    margin: 0 auto;
+    border-radius: 15px 15px 0px 0px;
+    margin: 40px auto;
     background: white;
-  
+
     .wrapper {
       display: flex;
       justify-content: space-between;
+      align-items: center;
     }
-  
+
     .close {
-      position: absolute;
+      // position: absolute;
+      flex: none;
       top: 10px;
       right: 10px;
       padding: 8px 10px;
@@ -42,35 +45,43 @@
       border-radius: 16px;
       z-index: 15;
     }
-  }
-}
 
-dialog {
-  margin-top: 20px;
-  padding: 0;
-  height: 100vh;
-  width: 100%;
-  max-width: none !important;
-  max-height: none !important;
-
+    
 
   @include mixin.mediaMinWidth(media.$tablet) {
-    // margin: 20px auto 0 auto;
-    max-width: 644px !important;
-    min-width: 655px;
-    max-height: 790px !important;
-    top: 50%;
-    left: 50%;
-    right: auto;
-    bottom: auto;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-    width: auto;
+    max-width: 655px;
+    border-radius: 15px;
+
+  }
   }
 }
 
-dialog::backdrop {
-  overflow: hidden;
-}
+// dialog {
+//   margin-top: 20px;
+//   padding: 0;
+//   height: 100vh;
+//   width: 100%;
+//   max-width: none !important;
+//   max-height: none !important;
 
-// [attr=value]
+
+//   @include mixin.mediaMinWidth(media.$tablet) {
+//     // margin: 20px auto 0 auto;
+//     max-width: 644px !important;
+//     min-width: 655px;
+//     max-height: 790px !important;
+//     top: 50%;
+//     left: 50%;
+//     right: auto;
+//     bottom: auto;
+//     margin-right: -50%;
+//     transform: translate(-50%, -50%);
+//     width: auto;
+//   }
+// }
+
+// dialog::backdrop {
+//   overflow: hidden;
+// }
+
+// // [attr=value]

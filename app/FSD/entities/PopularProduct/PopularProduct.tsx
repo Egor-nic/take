@@ -1,14 +1,37 @@
 import ProductCard from '../Products/ui/ProductCard';
 import styles from './PopularProduct.module.scss';
 
+interface Images {
+  avatar: string;
+  other: string[];
+}
+
+// Интерфейс для объекта location
+interface Location {
+  uuid: string;
+  title: string;
+  name: string;
+}
+
+// Интерфейс для объекта dates
+interface Dates {
+  BookedDates: Date[];
+}
+
+// Интерфейс для элемента массива
+interface ProductsList {
+  uuid: string;
+  price: number;
+  companyName: string;
+  productName: string;
+  immages: Images;
+  location: Location;
+  dates: Dates;
+  description: string;
+  characteristics: string;
+}
 interface SimilarProductProps {
-  products: {
-    img: string;
-    companyName: string;
-    productName: string;
-    price: number;
-    uuid: string;
-  }[];
+  products: ProductsList[];
 }
 export default function PopularProduct({ products }: SimilarProductProps) {
   return (
@@ -19,7 +42,7 @@ export default function PopularProduct({ products }: SimilarProductProps) {
           <ProductCard
             key={product.uuid}
             redirectUrl={`/product/${product.uuid}`}
-            img={product.img}
+            img={product.immages.avatar}
             price={product.price}
             productName={product.productName}
             companyName={product.companyName}

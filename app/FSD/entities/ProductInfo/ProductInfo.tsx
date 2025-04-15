@@ -2,21 +2,45 @@ import classNames from 'classnames';
 import { useState } from 'react';
 import { Link } from 'react-router';
 import Carousel from '~/FSD/shared/ui/Carusel/Carusel';
+import Modal from '~/FSD/shared/ui/Modal/Modal';
 import styles from './ProductInfo.module.scss';
 
+interface Images {
+  avatar: string;
+  other: string[];
+}
+
+// Интерфейс для объекта location
+interface Location {
+  uuid: string;
+  title: string;
+  name: string;
+}
+
+// Интерфейс для объекта dates
+interface Dates {
+  BookedDates: Date[];
+}
+
+interface ProductsList {
+  uuid: string;
+  price: number;
+  companyName: string;
+  productName: string;
+  immages: Images;
+  location: Location;
+  dates: Dates;
+  description: string;
+  characteristics: string;
+}
+
 interface ProductInfoProps {
-  product: {
-    uuid: string;
-    title: string;
-    images: string[];
-    price: number;
-    description: string;
-    characteristics: string;
-  } | undefined;
+  product: ProductsList | undefined;
 }
 
 export default function ProductInfo({ product }: ProductInfoProps) {
   const [activeTab, setActiveTab] = useState({ description: true, characteristics: false });
+  // const [openModalDate, setOpenModalDate] = useState(false);
 
   return (
     <div className={styles.wrapper}>
@@ -24,17 +48,16 @@ export default function ProductInfo({ product }: ProductInfoProps) {
         <div style={{ height: '88px', display: 'flex', alignItems: 'center' }}>
           <p> Будут хлебные крошки</p>
         </div>
-        <h2>{product?.title}</h2>
+        <h2>{product?.productName}</h2>
         <Carousel
           slidesPerView={1}
         >
-          {product?.images.map((img, index) => (
+          {product?.immages.other.map((img, index) => (
             // eslint-disable-next-line react/no-array-index-key
             <img className={styles.productImg} key={index} src={img} alt="img" />
 
           ))}
         </Carousel>
-
         <div className={styles.tabWrapper}>
           <div className={styles.tabs}>
             <button
@@ -59,9 +82,6 @@ export default function ProductInfo({ product }: ProductInfoProps) {
           </div>
           <p>{activeTab.characteristics ? product?.characteristics : product?.description}</p>
         </div>
-
-        {/* <Products products={similarProduct} cardSize='xs'/> */}
-
       </div>
 
       <div className={styles.rent}>
@@ -95,6 +115,11 @@ export default function ProductInfo({ product }: ProductInfoProps) {
 
         </div>
       </div>
+      {/* <Modal
+              open={openModalDate}
+              setOpen={setOpenModalDate}
+              modalContent={<Ca}
+            /> */}
     </div>
   );
 }
